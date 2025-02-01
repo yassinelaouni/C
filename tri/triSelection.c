@@ -11,7 +11,7 @@ void triSelection(int arr[], int n) {
             if (arr[j] < arr[minIndex]) {
                 minIndex = j;
             }
-        }
+        } 
 
         // Échanger l'élément minimum avec l'élément actuel
         temp = arr[minIndex];

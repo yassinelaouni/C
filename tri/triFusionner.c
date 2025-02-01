@@ -22,7 +22,7 @@ void triFusionner(int arr[], int gauche, int milieu, int droite) {
             arr[k] = G[i];
             i++;
         } else {
-            arr[k] = D[j];
+            arr[k] = D[j];  
             j++;
         }
         k++;
