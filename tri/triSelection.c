@@ -1,34 +1,38 @@
 #include <stdio.h>
 
-void triSelection(int arr[], int n) {
-    int i, j, minIndex, temp;
+// Échanger deux éléments
+void echanger(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void triSelection(int T[], int n) {
+    int i, j, minIndex;
 
     // Parcourir le tableau
     for (i = 0; i < n - 1; i++) {
         // Trouver l'indice du minimum dans le sous-tableau non trié
         minIndex = i;
         for (j = i + 1; j < n; j++) {
-            if (arr[j] < arr[minIndex]) {
+            if (T[j] < T[minIndex]) {
                 minIndex = j;
             }
         } 
 
-        // Échanger l'élément minimum avec l'élément actuel
-        temp = arr[minIndex];
-        arr[minIndex] = arr[i];
-        arr[i] = temp;
+        echanger(&T[minIndex], &T[i]);
     }
 }
 
 int main() {
-    int arr[] = {64, 25, 12, 22, 11};
-    int n = sizeof(arr) / sizeof(arr[0]);
+    int T[] = {64, 25, 12, 22, 11};
+    int n = sizeof(T) / sizeof(T[0]);
 
-    triSelection(arr, n);
+    triSelection(T, n);
 
     printf("Tableau trie par selection : \n");
     for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
+        printf("%d ", T[i]);
     }
     return 0;
 }
