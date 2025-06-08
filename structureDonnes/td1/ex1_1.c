@@ -29,7 +29,7 @@ int main()
             /* sinon afficher un message d'erreur */
             printf("\aPas assez de mémoire \n");
             /* et quitter le programme. */
-            exit(-1);
+            exit(EXIT_FAILURE);
         }
     }
 
@@ -54,7 +54,8 @@ int main()
 
     /**********************libération de l'espace mémoire***************/
     for (I = 0; I < 5; I++)
-        free(TEXTE[I]);
+        free(TEXTE[I]); // Libérer la mémoire allouée pour chaque chaîne
+    /*********************************IMPORTANT*********************************/
 
     // Wait for user input before closing
     printf("Press any key to exit...");
